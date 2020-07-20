@@ -2,11 +2,20 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const globals = require('./src/assets/globals');
+
 module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.join(__dirname, '/dist'),
 		filename: 'bundle.js',
+	},
+	resolve: {
+		alias: {
+			'@components': path.resolve(__dirname, 'src/components/'),
+			'@contexts': path.resolve(__dirname, 'src/contexts/'),
+			'@css': path.resolve(__dirname, 'src/assets/css'),
+		},
 	},
 	module: {
 		rules: [
@@ -47,11 +56,19 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/index.html',
+			filename: 'index.html',
+			scriptLoading: 'defer',
+			template: path.resolve(__dirname, './src/assets/template.ejs'),
+			inject: 'true',
+			title: globals.app.title,
+			meta: {
+				viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+				'theme-color': globals.app.themeColor,
+			},
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'modules.css',
-			chunkFilename: 'modules.css',
+			filename: '[name].bundle.css',
+			chunkFilename: '[id].css',
 		}),
 	],
 };

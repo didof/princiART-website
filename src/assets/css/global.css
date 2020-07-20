@@ -1,10 +1,18 @@
+/*
+   reset
+*/
+
 *, *::after, *::before {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
 
-body {
-   color: #000;
-   background-color: #eee;
+/*
+   base
+*/
+
+#layout {
+   width: 100wh;
+   height: 100vh;
 }
