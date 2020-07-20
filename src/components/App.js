@@ -1,13 +1,19 @@
 import React from 'react';
 import Layout from './layout/Layout';
 
-import { LanguagesContext } from '@contexts/languages/Languages_Provider';
+import Welcome from 'components/pages/welcome/Welcome';
+
+import useContext_Logs from 'hooks/useContext_Logs';
 
 function App() {
-	const [state, dispatch] = React.useContext(LanguagesContext);
-	console.log(state ? 'reducer ok' : 'reducer NO');
 
-	return <Layout><div>main</div></Layout>;
+	const [state, dispatch] = useContext_Logs('languages');
+
+	return (
+		<Layout>
+			<Welcome />
+		</Layout>
+	);
 }
 
 export default App;

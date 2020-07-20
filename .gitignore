@@ -1,2 +1,4 @@
 /node_modules/
 .netlify/
+/src/assets/css/tailwind.output.css
+dist/

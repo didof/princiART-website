@@ -12,9 +12,11 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			'@components': path.resolve(__dirname, 'src/components/'),
-			'@contexts': path.resolve(__dirname, 'src/contexts/'),
-			'@css': path.resolve(__dirname, 'src/assets/css'),
+			components: path.resolve(__dirname, 'src/components/'),
+			contexts: path.resolve(__dirname, 'src/contexts/'),
+			assets: path.resolve(__dirname, 'src/assets/'),
+			utilites: path.resolve(__dirname, 'src/utilities/'),
+			hooks: path.resolve(__dirname, 'src/hooks/')
 		},
 	},
 	module: {
@@ -25,6 +27,12 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 				},
+			},
+			{
+				test: /\.css$/,
+				exclude: /node_modules/,
+				include: /\.input\.css$/,
+				use: ['MiniCssExtractPlugin.loader', 'css-loader'],
 			},
 			{
 				test: /\.css$/,
