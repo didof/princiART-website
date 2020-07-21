@@ -9,20 +9,21 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, '/dist'),
 		filename: 'bundle.js',
+		publicPath: '/',
 	},
 	resolve: {
 		alias: {
 			components: path.resolve(__dirname, 'src/components/'),
 			contexts: path.resolve(__dirname, 'src/contexts/'),
 			assets: path.resolve(__dirname, 'src/assets/'),
-			utilites: path.resolve(__dirname, 'src/utilities/'),
-			hooks: path.resolve(__dirname, 'src/hooks/')
+			utilities: path.resolve(__dirname, 'src/utilities/'),
+			hooks: path.resolve(__dirname, 'src/hooks/'),
 		},
 	},
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
@@ -61,6 +62,9 @@ module.exports = {
 	devServer: {
 		compress: true,
 		port: 9000,
+		historyApiFallback: true,
+		hot: true,
+		open: true
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

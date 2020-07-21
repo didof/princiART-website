@@ -6,10 +6,10 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      sm: '480px', // mobile
+      md: '768px', // tablet
+      lg: '1024px', // laptop
+      xl: '1280px', // desktop
     },
     colors: {
       transparent: 'transparent',

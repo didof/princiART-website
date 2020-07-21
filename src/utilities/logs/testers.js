@@ -1,4 +1,4 @@
-export function check(test, ref) {
+export function isPopulated(test, ref) {
    if(test) {
       console.log(`(OK) | ${ref}`)
       return true

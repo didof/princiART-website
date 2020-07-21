@@ -1,14 +1,14 @@
 export const initialState = {
 	selected: 0,
 	avaiable: ['italiano', 'english'],
-	template: [
-		{
+	template: {
+		italiano: {
 			test: 'ita',
 		},
-		{
+		english: {
 			test: 'eng',
 		},
-	],
+	},
 };
 
 export default function (state, { type, payload }) {
