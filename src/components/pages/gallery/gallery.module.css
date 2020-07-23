@@ -1,7 +1,7 @@
 .masonry {
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(125px, auto));
-   grid-auto-rows: 125px;
+   grid-template-columns: repeat(auto-fill, minmax(25px, auto));
+   grid-auto-rows: 25px;
    justify-content: stretch;
    align-items: stretch;
    column-gap: 10px;

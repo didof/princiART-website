@@ -31,16 +31,17 @@ import pics from 'assets/pictures/pics';
 function generatePictures(data) {
 	const autoSpan = 'auto / span ';
 	return data.map(function (el) {
-		const [c, r] = el.gridDimensions.split(' ');
+		// const [c, r] = el.gridDimensions.split(' ');
+		const [c, r] = el.realDimensions.split('x');
 		return {
 			grid: {
-				gridColumn: autoSpan + c,
-				gridRow: autoSpan + r,
+				gridColumn: autoSpan + c / 10,
+				gridRow: autoSpan + r / 10,
 			},
 			meta: {
 				category: el.category,
 				tags: el.tags,
-            alt: el.alt
+				alt: el.alt,
 			},
 			title: el.title,
 			description: el.description,
