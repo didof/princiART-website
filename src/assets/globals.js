@@ -7,16 +7,12 @@ module.exports = {
 	navigation: {
 		pages: [
 			{
-				label: 'Home',
+				label: 'Gallery',
 				url: '/',
 			},
 			{
 				label: 'Biography',
 				url: '/bio',
-			},
-			{
-				label: 'Gallery',
-				url: '/gallery',
 			},
 			{
 				label: 'Contact',

@@ -6,10 +6,6 @@ import Context from 'components/Contexts';
 
 import 'assets/css/global.css';
 
-// modules
-import 'assets/css/app.module.css';
-import 'assets/css/layout.module.css';
-
 // the following asset is the outcome of the npm script "prebuild"
 import 'assets/css/tailwind.output.css';
 

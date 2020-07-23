@@ -12,7 +12,7 @@ export default function Header() {
 	return (
 		<header
 			id='header'
-			className={`bg-${template.secondary}-300 flex items-center justify-around fixed w-full`}
+			className={`relative bg-${template.secondary}-300 fixed w-full flex justify-between items-center px-4 h-12 border-b}`}
 		>
 			<Brand />
 			<Burger />
