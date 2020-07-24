@@ -48,6 +48,7 @@ function generatePictures(data) {
 			tecnique: el.tecnique,
 			realDimensions: el.realDimensions,
 			mainColor: el.mainColor,
+			image: require(`../../../assets/pictures/${el.title}.jpg`)
 		};
 	});
 }

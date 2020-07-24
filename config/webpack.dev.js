@@ -12,15 +12,9 @@ module.exports = merge(common, {
 	output: {
 		filename: 'main.js',
 		path: path.resolve(__dirname, '../dist'),
-		publicPath: '/',
+		publicPath: '',
 	},
-	devServer: {
-		compress: true,
-		port: 9000,
-		historyApiFallback: true,
-		hot: true,
-		open: true,
-	},
+	
 	module: {
 		rules: [
 			{
@@ -28,11 +22,21 @@ module.exports = merge(common, {
 				use: {
 					loader: 'file-loader',
 					options: {
-						name: '[name].[ext]',
-						outputPath: 'images',
+						name: '[path][name].[ext]',
 					},
 				},
 			},
+			// {
+			// 	test: /\.(jpe?g|png|svg|gif)$/,
+			// 	use: [
+			// 		{
+			// 			loader: 'url-loader',
+			// 			options: {
+			// 				limit: false,
+			// 			},
+			// 		},
+			// 	],
+			// },
 		],
 	},
 });

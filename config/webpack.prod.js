@@ -12,7 +12,7 @@ module.exports = merge(common, {
 	mode: 'production',
 	output: {
 		filename: 'main.[hash].js',
-		path: path.resolve(__dirname, '../dist'),
+		path: path.resolve(__dirname, '../dist/'),
 		publicPath: '',
 	},
 	module: {
@@ -22,11 +22,22 @@ module.exports = merge(common, {
 				use: {
 					loader: 'file-loader',
 					options: {
-						name: '[name].[hash].[ext]',
+						name: '[contentHash].[ext]',
 						outputPath: 'images',
 					},
 				},
 			},
+			// {
+			// 	test: /\.(jpe?g|png|svg|gif)$/,
+			// 	use: [
+			// 		{
+			// 			loader: 'url-loader',
+			// 			options: {
+			// 				limit: 100000,
+			// 			},
+			// 		},
+			// 	],
+			// },
 		],
 	},
 });

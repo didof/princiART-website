@@ -10,7 +10,7 @@ export default function Navigator() {
 	const [{ template }] = useContext_Logs('themes');
 
 	return (
-		<nav id='nav' className='absolute right-0 bottom-0 flex flex-row hidden md:block items-stretch'>
+		<nav id='nav' className='absolute right-0 bottom-0 flex flex-row hidde md:block items-stretch'>
 			{navigation.pages.map(({ label, url }, i) => {
 				return (
 					<NavLink

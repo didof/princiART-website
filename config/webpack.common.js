@@ -14,7 +14,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			scriptLoading: 'defer',
-			template: path.join(__dirname, '..', 'src', 'assets', 'template.ejs'),
+			template: path.join(__dirname, '..', 'src', 'assets', 'template.html'),
 			inject: 'true',
 			title: globals.app.title,
 			meta: {
@@ -23,11 +23,18 @@ module.exports = {
 			},
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'chunk.[name].css',
+			filename: '[name].[hash].css',
 			chunkFilename: 'chunk.[id].css',
 		}),
-		// new CleanWebpackPlugin(),
+		new CleanWebpackPlugin(),
 	],
+	devServer: {
+		compress: true,
+		port: 9000,
+		historyApiFallback: true,
+		hot: true,
+		open: true,
+	},
 	resolve: {
 		alias: {
 			components: path.resolve(__dirname, '../src/components/'),

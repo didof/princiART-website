@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from 'components/common/Card';
+import Card from './Card';
 
-import * as style from './gallery.module.css';
+import * as style from 'assets/css/gallery.module.css';
 
 export default function Masonry({ bricks }) {
 	const defaultClass =
